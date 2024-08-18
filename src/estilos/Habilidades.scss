@@ -1,0 +1,9 @@
+.habilidades {
+  list-style-type: "> ";
+  margin-left: 5px;
+  margin-bottom: 20px;
+}
+
+.habilidades > .gaveta > * {
+  margin-left: 20px;
+}

@@ -1,0 +1,38 @@
+.contador {    
+  display: flex;
+  h4 {
+    float: left;
+    margin: 0px 18px 0px 5px;
+  }
+  .container {
+    float:left;
+    margin-left: -5px;
+    margin-right: -25px;
+    span {
+      cursor: pointer;
+    }
+  }
+  button {
+    float: left;
+    background-color: transparent;
+    margin: 2px 1px 0px 28px;
+    border-radius: 25px;
+    height: 16px;
+    width: 7px;
+    transform: scale(0.8);
+    border: 2px #333333 solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    a{
+      font-size: 18px;
+      scale: 0.8;
+    }
+    .menos{
+      font-size: 24px;
+      margin-top: -3px;
+    }
+  }
+}

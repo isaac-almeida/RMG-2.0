@@ -1,0 +1,33 @@
+body {
+  background-image: url("./cidade.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.tudo {
+  display: grid;
+  grid-template-columns: 4fr auto;
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+  height: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(78, 55, 55);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(63, 21, 21, 0.527);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 6, 6, 0.808);
+}

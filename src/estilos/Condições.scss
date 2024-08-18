@@ -1,0 +1,37 @@
+.condições {
+  clear: both;
+  h4 {
+    position: relative;
+    left: 5px;
+    top: 15px;
+  }
+
+  .listaCondições {
+    margin: -10px 0px;
+    list-style-type: "> ";
+    .condição {
+      user-select: text;
+      background-color: rgba(59, 18, 2, 0.397);
+
+      border-radius: 100px / 10px 10px 10px 10px;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+
+      padding: 4px 6px 10px 6px;
+      p {
+        margin-top: 0px;
+      }
+      span {
+        display: block;
+        font-style: italic;
+        font-size: 13px;
+      }
+
+      ::selection {
+        color: rgba(255, 255, 255, 0.397);
+        background-color: rgba(2, 59, 2, 0.397);
+        text-shadow: none;
+      }
+    }
+  }
+}

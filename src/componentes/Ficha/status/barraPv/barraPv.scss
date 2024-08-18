@@ -1,0 +1,30 @@
+.barraPv {
+    h3 {
+    height: 20px;
+    float: left;
+    margin: 5px 0px 0px 5px;
+    }
+
+    .barraPvInteira {
+        position: relative;
+        top: -10px;
+        left: -30px;
+        display: flex;
+        li {            
+            float: left;
+            div {
+                scale: 1.1;
+                height: 20px;
+                width: 34px;
+                border-radius: 8px;
+            }
+        }
+        ul {
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            width: 300px;
+            list-style-type: none;
+            height: 20px;
+        }
+    }
+}

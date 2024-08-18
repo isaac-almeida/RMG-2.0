@@ -1,0 +1,43 @@
+.barraMana {
+    height: 16px;
+    margin-top: -14px;
+    h4 {
+        float: left;
+        margin: -2px 0px 0px 5px;
+    }
+
+    .qtde {
+        position: absolute;
+        height: 15px;
+        padding: 0px 2px 2px 2px;
+        font-size: 14px;
+        width: auto;
+        background-color: rgba(5, 10, 85, 0.801);
+        color: skyblue;
+        font-weight: normal;
+        border: 1px solid white;
+        border-radius: 16px;
+    }
+    .barra {
+        margin-left: 51px;
+        height: 16px;
+        width: 240px;
+        border-radius: 5px 10px 10px 5px;
+        background-color: lightblue;
+        cursor: pointer;
+        .mana {
+            height: 16px;
+            border-radius: 3px 10px 10px 3px;            
+            background-color: rgb(8, 86, 112);
+            cursor: pointer;
+            transition: width 0.25s ease-in, background-color 1s;
+        }
+        .mana:active {
+            background-color: rgb(43, 33, 3);
+            transition: background-color 0.5s;
+        }
+    }
+    // .barra:active > .mana {
+    //     animation: aumentaMana 0.5s ease-in-out;
+    // }
+}
