@@ -2,33 +2,24 @@
   position: relative;
   left: 5px;
 
-  .tabelaFeitiços {
-    border-top: 5px solid rgba(31, 6, 6, 0.808);
-    border-radius: 3px;
-    overflow-y: scroll;
-    max-height: 130px;
-    display:block;
-
-    /* width */
-  }
   ::-webkit-scrollbar {
     width: 6px;
     position: fixed;
     display: block;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    background: transparent; 
+    background: transparent;
   }
-   
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: rgba(88, 28, 28, 0.527); 
+    background: rgba(88, 28, 28, 0.527);
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(31, 6, 6, 0.808); 
+    background: rgba(31, 6, 6, 0.808);
   }
 }

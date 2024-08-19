@@ -7,17 +7,10 @@ interface Props {
   name: string;
   tamanho?: string;
   ocultarNulos?: boolean;
-  preenchimento?: any; //dicionário com listas de conteúdo
+  evento?: any; //dicionário com listas de conteúdo
 }
 
-const Pontos = ({
-  itens,
-  max,
-  name,
-  tamanho,
-  ocultarNulos,
-  preenchimento,
-}: Props) => {
+const Pontos = ({ itens, max, name, tamanho, ocultarNulos, evento }: Props) => {
   const nomesItens = Object.keys(itens);
   const lista = [];
   for (let j = 0; j < nomesItens.length; j++) {
@@ -34,21 +27,20 @@ const Pontos = ({
         );
       }
 
-      let conteúdo = <div></div>;
-      if (preenchimento) {
-        console.log(preenchimento[nomesItens[j]]);
-        conteúdo = preenchimento[nomesItens[j]];
-      }
-
       lista.push(
-        <li className="pontuação" key={nomesItens[j]}>
+        <li
+          className="pontuação"
+          key={nomesItens[j]}
+          onClick={() => {
+            evento(nomesItens[j]);
+          }}
+        >
           <p>
             {nomesItens[j].charAt(0).toUpperCase() +
               nomesItens[j].slice(1) +
               ": "}
           </p>
           <ul className="pontinhos">{pontos}</ul>
-          <ul className="conteúdo">{conteúdo}</ul>
         </li>
       );
     }

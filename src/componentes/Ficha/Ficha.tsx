@@ -88,10 +88,10 @@ function Ficha() {
             ocultarNulos={true}
           />
         </Gaveta>
-        {/* <Feitiços
+        <Feitiços
           habilidades={ficha.habilidades}
           feitiçaria={ficha.feitiçaria}
-        /> */}
+        />
       </div>
     </div>
   );

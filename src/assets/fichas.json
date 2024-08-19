@@ -83,12 +83,7 @@
         "espírito": 1,
         "forças": 3,
         "matéria": 4,
-        "mente": 0,
-        "morte": 0,
-        "primórdio": 0,
-        "sorte": 0,
-        "tempo": 2,
-        "vida": 0
+        "tempo": 2
       },
       "feitiços": {
         "espaço": {
@@ -184,10 +179,6 @@
             "skill": false
           }
         },
-        "mente": {},
-        "morte": {},
-        "primórdio": {},
-        "sorte": {},
         "tempo": {
           "tempo Dimension5": {
             "nível": 4,
@@ -207,8 +198,7 @@
             "especialidade": false,
             "skill": false
           }
-        },
-        "vida": {}
+        }
       }
     }
   }
