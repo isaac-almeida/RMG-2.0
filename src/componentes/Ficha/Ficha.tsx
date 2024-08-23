@@ -92,6 +92,7 @@ function Ficha() {
           habilidades={ficha.habilidades}
           feitiçaria={ficha.feitiçaria}
         />
+        <div className="espaço"></div>
       </div>
     </div>
   );

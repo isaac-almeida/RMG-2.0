@@ -8,7 +8,6 @@
   text-shadow: 1px 1px 1px #61480e;
   font-weight: bolder;
   user-select: none;
-  min-height: 120vh;
 }
 
 .wrapper {
@@ -16,4 +15,9 @@
   background-image: url("jornal2.png");
   background-size: 110% auto;
   background-position: left -18px top -10px;
+}
+
+.espaço {
+  height: 200px;
+  width: 100%;
 }

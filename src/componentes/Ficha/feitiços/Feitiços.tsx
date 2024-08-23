@@ -12,30 +12,42 @@ interface Props {
 
 const Feitiços = ({ habilidades, feitiçaria }: Props) => {
   //   const [atual, mudarFeitiço] = useState({});
+  //código que encontra a primeira arcana com feitiços
   const nomesArcanas = Object.keys(feitiçaria.feitiços);
-  const [arcana, mudarArcana] = useState("");
 
   let feitiçosArcanas: any = {};
+  let arcanasValidas = [];
 
   for (let i = 0; i < nomesArcanas.length; i++) {
     // percorre as dez arcanas
     // verifica se há feitiços para uma determinada arcana,
     const listaFeitiços = [];
     const nomesFeitiços = Object.keys(feitiçaria.feitiços[nomesArcanas[i]]);
-    for (let feitiço = 0; feitiço < nomesFeitiços.length; feitiço++) {
-      listaFeitiços.push(
-        <li key={nomesFeitiços[feitiço]}>
-          <p>{nomesFeitiços[feitiço]}</p>
-          <p className="estrelas">
-            {" \u272a".repeat(
-              feitiçaria.feitiços[nomesArcanas[i]][nomesFeitiços[feitiço]].nível
-            )}
-          </p>
-        </li>
-      );
+    if (nomesFeitiços.length > 0) {
+      arcanasValidas.push(nomesArcanas[i]);
+      for (let feitiço = 0; feitiço < nomesFeitiços.length; feitiço++) {
+        listaFeitiços.push(
+          <li key={nomesFeitiços[feitiço]}>
+            <p className="texto">
+              {nomesFeitiços[feitiço].charAt(0).toUpperCase() +
+                nomesFeitiços[feitiço].slice(1)}
+              z
+            </p>
+            <p className="estrelas">
+              {" \u272a".repeat(
+                feitiçaria.feitiços[nomesArcanas[i]][nomesFeitiços[feitiço]]
+                  .nível
+              )}
+            </p>
+          </li>
+        );
+      }
     }
     feitiçosArcanas[nomesArcanas[i]] = listaFeitiços;
   }
+  const [arcana, mudarArcana] = useState(
+    arcanasValidas[Math.floor(Math.random() * arcanasValidas.length)]
+  );
   {
     //   function selecionaFeitiço(feitiço: any) {}
     //   for (let feitiço = 0; feitiço < listaFeitiços.length; feitiço++) {
@@ -69,7 +81,10 @@ const Feitiços = ({ habilidades, feitiçaria }: Props) => {
         ocultarNulos={true}
         evento={mudarArcana}
       />
-      <ul className="listaFeitiços">{feitiçosArcanas[arcana]}</ul>
+      <div className="listaFeitiços">
+        <h3>{arcana.charAt(0).toUpperCase() + arcana.slice(1)}</h3>
+        <ul className="lista">{feitiçosArcanas[arcana]}</ul>
+      </div>
     </div>
   );
 };
