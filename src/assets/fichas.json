@@ -1,7 +1,7 @@
 {
   "adrino": {
     "identificação": {
-      "pfp": "https://upload.wikimedia.org/wikipedia/commons/5/57/Emoji_u1f61d.svg",
+      "pfp": "",
       "nome": "Adrino Lipskipskipskipskipskipskipskips",
       "titulo": "Maluco de Aluguel"
     },
@@ -16,10 +16,10 @@
       "pds": 1.2,
       "condições": {
         "Inspirada": {
-          "efeito": "Pode encerrar a condição antes de uma rolagem para que ela obtenha qualiadade de praxis.",
+          "efeito": "Pode encerrar a condição antes de uma rolagem para que esta obtenha qualiadade de praxis.",
           "fonte": "acerto crítico",
           "duração": "1 cena",
-          "img": "https://cdn-icons-png.flaticon.com/512/551/551080.png"
+          "img": ""
         },
         "Uiuiui": {
           "efeito": " ggh gg  jkhlhjklhjkhjklhl hjh jkh hjhjk kjhlh kjhhjkh jkhjkh jkhkjhj kjhkjhjk jkhkjhk jhkjjk hjk hjkkj hjjkkj jkhjkhkj jkhkjkjhlpy iuoyo  fgf fgcghhghgjfjhg hg jkhjkh kjkhjg jkhgkjkjbmn v m mbvkhgvkhj kjh kjh gh hkj k kklhkjhj kjhkjhjk jkhkjhk jhkjjk hjk hjkkj hjjkkj jkhjkhkj jkhkjkjhlpy iuoyo  fgf fgcghhghgjfjhg hg jkhjkh kjkhjg jkhgkjkjbmn v m mbvkhgvkhj kjh kjh gh hkj k kklhkjhj kjhkjhjk jkhkjhk jhkjjk hjk hjkkj hjjkkj jkhjkhkj jkhkjkjhlpy iuoyo  fgf fgcghhghgjfjhg hg jkhjkh kjkhjg jkhgkjkjbmn v m mbvkhgvkhj kjh kjh gh hkj k kklmnb lg kjh vghcfgxjgh jhg jhgbn vjhm k hjbhjkbhjbky l uf r ghfv,hj c hgjcf ,jhg m kvf g",
@@ -43,38 +43,32 @@
       "autocontrole": 1
     },
     "habilidades": {
-      "mentais": {
-        "ciências": 2,
-        "erudição": 0,
-        "informática": 5,
-        "investigação": 1,
-        "medicina": 0,
-        "ocultismo": 1,
-        "ofícios": 0,
-        "política": 2
-      },
+      "ciências": 2,
+      "erudição": 0,
+      "informática": 5,
+      "investigação": 1,
+      "medicina": 0,
+      "ocultismo": 1,
+      "ofícios": 0,
+      "política": 2,
 
-      "físicas": {
-        "armamento": 1,
-        "pontaria": 1,
-        "briga": 0,
-        "condução": 3,
-        "dissimulação": 0,
-        "esportes": 2,
-        "furto": 0,
-        "sobrevivência": 0
-      },
+      "armamento": 1,
+      "pontaria": 1,
+      "briga": 0,
+      "condução": 3,
+      "dissimulação": 0,
+      "esportes": 2,
+      "furto": 0,
+      "sobrevivência": 0,
 
-      "sociais": {
-        "astúcia": 2,
-        "empatia": 0,
-        "expressão": 1,
-        "intimidação": 0,
-        "manha": 0,
-        "persuasão": 0,
-        "socialização": 0,
-        "animais": 1
-      }
+      "astúcia": 2,
+      "empatia": 0,
+      "expressão": 1,
+      "intimidação": 0,
+      "manha": 0,
+      "persuasão": 0,
+      "socialização": 0,
+      "animais": 1
     },
     "feitiçaria": {
       "gnose": 3,
@@ -82,122 +76,56 @@
         "espaço": 5,
         "espírito": 1,
         "forças": 3,
-        "matéria": 4,
         "tempo": 2
       },
       "feitiços": {
-        "espaço": {
-          "Correspondence": {
-            "nível": 1,
-            "fator": "potência",
-            "especialidade": "praxis",
-            "skill": false,
-            "fav": true
-          },
-          "Veil Sympathy": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          },
-          "Pocket Dimension": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          },
-          "Veil Sympathy2": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          }
+        "espaço": [
+          "Correspondence",
+          "Borrow Threads",
+          "Veil Sympathy",
+          "Pocket Dimension",
+          "Co-Location",
+          "Forge No Chains"
+        ],
+
+        "espírito": ["Coaxing the Spirits", "Know Spirit", "Exorcist's Eye"],
+        "forças": [
+          "Influence Electricity",
+          "Tune In",
+          "Control Electricity",
+          "Control Sound",
+          "Turn Momentum"
+        ],
+        "tempo": [
+          "Perfect Timing",
+          "Green Light / Red Light",
+          "Choose the Thread",
+          "Tipping the Hourglass"
+        ]
+      },
+      "feitiçosFavoritos": {
+        "Correspondence": {
+          "especialidade": "P C",
+          "skill": "investigação",
+          "arcana": "espaço"
         },
-        "espírito": {
-          "espiritum": {
-            "nível": 1,
-            "fator": "potência",
-            "especialidade": "praxis",
-            "skill": false
-          },
-          "espiritoisss": {
-            "nível": 1,
-            "fator": "potência",
-            "especialidade": "praxis",
-            "skill": false
-          },
-          "Veil epeiss": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          }
+        "Co-Location": {
+          "especialidade": "C",
+          "skill": "ciências",
+          "arcana": "espaço"
         },
-        "forças": {
-          "força Dimension": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          },
-          "Veil força": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          },
-          "força força": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          },
-          "fuwuwu ": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          }
+        "Perfect Timing": {
+          "especialidade": "C",
+          "skill": "esportes",
+          "arcana": "tempo"
         },
-        "matéria": {
-          "Dimension3": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          },
-          "Veil": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          },
-          "Pocket": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          }
+        "Tune In": {
+          "especialidade": "P",
+          "arcana": "forças"
         },
-        "tempo": {
-          "tempo Dimension5": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          },
-          "Veil tempo": {
-            "nível": 2,
-            "fator": "duração",
-            "especialidade": "clássico",
-            "skill": "política"
-          },
-          "Pocket tempo": {
-            "nível": 4,
-            "fator": "duração",
-            "especialidade": false,
-            "skill": false
-          }
+        "Control Sound": {
+          "especialidade": "P",
+          "arcana": "forças"
         }
       }
     }

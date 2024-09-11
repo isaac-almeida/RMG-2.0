@@ -1,13 +1,19 @@
+@font-face {
+  font-family: "fonte";
+  src: url("./../assets/JMH\ Typewriter.ttf");
+}
+
 .ficha {
   position: relative;
   top: 5px;
   left: 2.2%;
   width: 577px;
-  color: rgb(32, 32, 32);
-  font-family: "BhuTuka Expanded One", serif;
+  color: rgb(44, 31, 31);
+  font-family: "fonte";
   text-shadow: 1px 1px 1px #61480e;
-  font-weight: bolder;
+  // font-weight: bolder;
   user-select: none;
+  padding: 10px;
 }
 
 .wrapper {

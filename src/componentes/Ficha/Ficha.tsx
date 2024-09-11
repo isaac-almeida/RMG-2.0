@@ -2,13 +2,16 @@
 import "../../estilos/Ficha.scss";
 import "../../estilos/Habilidades.scss";
 import "../../estilos/Atributos.scss";
+import "../../estilos/Identificação.scss";
 
 import fichas from "../../assets/fichas.json";
+import listaFeitiços from "../../assets/feitiços.json";
 import Gaveta from "../Genéricos/Gaveta";
 import Pontos from "../Genéricos/Pontos";
 
 import Status from "./status/Status";
 import Feitiços from "./feitiços/Feitiços";
+import Conjuração from "./feitiços/Conjuração";
 
 const ficha = fichas["adrino"];
 
@@ -21,10 +24,10 @@ function Ficha() {
       .forEach((palavra) =>
         palavra.length > maiorTamanho ? (maiorTamanho = palavra.length) : {}
       );
-    let tamanhoFonte = 180 / maiorTamanho;
+    let tamanhoFonte = 150 / maiorTamanho;
 
-    if (tamanhoFonte < 30) {
-      tamanhoFonte = 30;
+    if (tamanhoFonte < 40) {
+      tamanhoFonte = 40;
     }
 
     return tamanhoFonte;
@@ -35,9 +38,7 @@ function Ficha() {
         <div className="identificação">
           <div className="pfpContainer">
             <img
-              src={
-                "https://upload.wikimedia.org/wikipedia/commons/5/57/Emoji_u1f61d.svg"
-              }
+              src="./saske.png"
               alt={ficha.identificação.nome + ", " + ficha.identificação.titulo}
             />
           </div>
@@ -70,29 +71,32 @@ function Ficha() {
         />
         <Gaveta título="habilidades" tamanho="enorme">
           <Pontos
-            itens={ficha.habilidades.mentais}
+            itens={ficha.habilidades}
             max={5}
             name="mentais"
+            range={[0, 8]}
             ocultarNulos={true}
           />
           <Pontos
-            itens={ficha.habilidades.físicas}
+            itens={ficha.habilidades}
             max={5}
             name="físicas"
+            range={[8, 16]}
             ocultarNulos={true}
           />
           <Pontos
-            itens={ficha.habilidades.sociais}
+            itens={ficha.habilidades}
             max={5}
             name="sociais"
+            range={[16, 24]}
             ocultarNulos={true}
           />
         </Gaveta>
-        <Feitiços
+        <Conjuração
           habilidades={ficha.habilidades}
           feitiçaria={ficha.feitiçaria}
+          listaFeitiços={listaFeitiços}
         />
-        <div className="espaço"></div>
       </div>
     </div>
   );

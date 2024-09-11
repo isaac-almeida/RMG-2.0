@@ -1,6 +1,5 @@
-.feitiços {
-  position: relative;
-  left: 5px;
+.Feitiços {
+  list-style-type: "> ";
 
   ::-webkit-scrollbar {
     width: 6px;
@@ -51,15 +50,12 @@
       grid-template-columns: 1fr 1fr;
 
       text-wrap: nowrap;
-      font-size: 12px;
       align-content: center;
 
       padding: 2px 12px;
       border-radius: 5px;
 
       height: 22px;
-      .texto {
-      }
       .estrelas {
         text-align: right;
       }
@@ -68,6 +64,16 @@
     li:hover {
       background-color: #40341854;
       background-position: bottom 10px right 300px;
+    }
+  }
+}
+
+.Feitiços {
+  .gaveta {
+    .pontos {
+      .pontuação {
+        width: 345px;
+      }
     }
   }
 }

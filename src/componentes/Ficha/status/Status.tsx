@@ -1,4 +1,4 @@
-import "./status.scss";
+import "../../../estilos/Status.scss";
 import BarraPv from "./barraPv/BarraPv";
 import BarraMana from "./barraMana/BarraMana";
 import Fdv from "./fdv/Fdv";

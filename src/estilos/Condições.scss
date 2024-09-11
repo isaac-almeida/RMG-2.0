@@ -3,12 +3,22 @@
   h4 {
     position: relative;
     left: 5px;
-    top: 15px;
+    top: 5px;
   }
 
   .listaCondições {
-    margin: -10px 0px;
+    margin: -20px 0px;
     list-style-type: "> ";
+    li {
+      .gavetão {
+        h2 {
+          font-size: 18px;
+        }
+        .gaveta {
+          background: none;
+        }
+      }
+    }
     .condição {
       user-select: text;
       background-color: rgba(59, 18, 2, 0.397);
@@ -18,13 +28,15 @@
       border-top-right-radius: 7px;
 
       padding: 4px 6px 10px 6px;
+      width: 90%;
       p {
         margin-top: 0px;
+        font-size: 16px;
       }
       span {
         display: block;
         font-style: italic;
-        font-size: 13px;
+        font-size: 14px;
       }
 
       ::selection {

@@ -1,7 +1,9 @@
 .gavetão {
+  margin-left: -10px;
   padding-top: 4px;
   h2 {
-    font-size: 16px;
+    margin-left: 5px;
+    font-size: 20px;
     cursor: pointer;
   }
 
@@ -10,6 +12,14 @@
     max-height: 0;
     transition: max-height 1s ease-out;
     overflow: hidden;
+    background-image: linear-gradient(
+      rgba(73, 53, 53, 0.253),
+      rgba(73, 53, 53, 0),
+      rgba(73, 53, 53, 0.253)
+    );
+  }
+  .gaveta * {
+    background: none;
   }
 
   .gaveta.média {
@@ -18,12 +28,12 @@
   }
 
   .gaveta.grande {
-    max-height: 300px;
+    max-height: 350px;
     overflow-y: auto;
   }
 
   .gaveta.enorme {
-    max-height: 450px;
+    max-height: 550px;
     overflow-y: auto;
   }
 }

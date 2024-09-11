@@ -5,15 +5,26 @@ interface Props {
   itens: any;
   max: number;
   name: string;
+  range?: any;
   tamanho?: string;
   ocultarNulos?: boolean;
   evento?: any; //dicionário com listas de conteúdo
+  children?: any;
 }
 
-const Pontos = ({ itens, max, name, tamanho, ocultarNulos, evento }: Props) => {
+const Pontos = ({
+  itens,
+  max,
+  name,
+  range = [0, Object.keys(itens).length],
+  tamanho,
+  ocultarNulos,
+  evento,
+  children,
+}: Props) => {
   const nomesItens = Object.keys(itens);
   const lista = [];
-  for (let j = 0; j < nomesItens.length; j++) {
+  for (let j = range[0]; j < range[1]; j++) {
     const pontos = [];
     if (!(itens[nomesItens[j]] == 0 && ocultarNulos)) {
       for (let i = 0; i < max; i++) {
@@ -50,6 +61,7 @@ const Pontos = ({ itens, max, name, tamanho, ocultarNulos, evento }: Props) => {
     // <div className="pontos">
     <Gaveta título={name} tamanho={tamanho ? tamanho : "grande"}>
       <ul className={"pontos"}>{lista}</ul>
+      {children}
     </Gaveta>
     // </div>
   );

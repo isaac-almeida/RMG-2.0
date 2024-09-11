@@ -1,8 +1,6 @@
 import "./feitiço.scss";
 
-const Feitiço = ({ nomeFeitiço, tipo, select }: any) => {
-  const T = tipo ? tipo.charAt(0).toUpperCase() : " ";
-
+const Feitiço = ({ nomeFeitiço, especialidade, select }: any) => {
   return (
     <tbody className="feitiço">
       <tr>
@@ -16,7 +14,7 @@ const Feitiço = ({ nomeFeitiço, tipo, select }: any) => {
             transform: rotate(1turn);
             transition: transform 1s
           `;
-                select(nomeFeitiço, T);
+                select(nomeFeitiço);
                 setTimeout(() => {
                   const alvo = a.target;
                   (alvo as any).style.cssText = `
@@ -29,7 +27,9 @@ const Feitiço = ({ nomeFeitiço, tipo, select }: any) => {
           </div>
         </td>
         <td className="item">{nomeFeitiço}</td>
-        <td className="tipo">{T}</td>
+        <td className="tipo">
+          {especialidade.replace("P", "Praxis").replace("C", "Clássico")}
+        </td>
       </tr>
     </tbody>
   );
