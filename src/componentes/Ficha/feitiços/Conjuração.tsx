@@ -15,54 +15,40 @@ const Conjuração = ({ habilidades, feitiçaria, listaFeitiços }: Props) => {
   const arcanas = feitiçaria.arcanas;
   const feitiçosFavoritos = feitiçaria.feitiçosFavoritos;
   const nomesFeitiçosFavoritos = Object.keys(feitiçosFavoritos);
-  const todosNomesFeitiços = Object.keys(listaFeitiços);
   //objeto que contém todas as informações lidas pela tabela de conjuração. Tudo é escrito aqui, depois enviado à tabela de conjuração, que lê os dados e os exibe.
   let numeroFeitiço = 4;
-  // numeroFeitiço = Math.random() * nomesFeitiçosFavoritos.length
+  numeroFeitiço = Math.floor(Math.random() * nomesFeitiçosFavoritos.length);
+  const feitiço = nomesFeitiçosFavoritos[numeroFeitiço];
 
   const [detalhesFeitiçoAtual, mudaDetalhesFeitiço] = useState(
-    Object.assign(
-      listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]],
-      Object(feitiçosFavoritos[nomesFeitiçosFavoritos[numeroFeitiço]]),
-      {
-        nomeFeitiço: nomesFeitiçosFavoritos[numeroFeitiço],
-        nívelArcana:
-          feitiçaria.arcanas[
-            listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].arcana
-          ],
-        potência:
-          listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].fator ==
-          "Potency "
-            ? feitiçaria.arcanas[
-                listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].arcana
-              ]
-            : 1,
-        duração:
-          listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].fator ==
-          "Duration "
-            ? feitiçaria.arcanas[
-                listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].arcana
-              ]
-            : 1,
-        escala: 1,
-        alcance: 0,
-        reaches: 0,
-        reachMin: 0,
-        potênciaAv: false,
-        duraçãoAv: false,
-        escalaAv: false,
-        yantras: 0,
-        dadosExtra: 0,
-        totalDados:
-          feitiçaria.arcanas[
-            listaFeitiços[nomesFeitiçosFavoritos[numeroFeitiço]].arcana
-          ] +
-          feitiçaria.gnose +
-          (habilidades[
-            feitiçosFavoritos[nomesFeitiçosFavoritos[numeroFeitiço]].skill
-          ] ?? 0),
-      }
-    )
+    Object.assign(listaFeitiços[feitiço], Object(feitiçosFavoritos[feitiço]), {
+      nomeFeitiço: feitiço,
+      nívelArcana: feitiçaria.arcanas[listaFeitiços[feitiço].arcana],
+      potência:
+        listaFeitiços[feitiço].fator == "Potency "
+          ? feitiçaria.arcanas[listaFeitiços[feitiço].arcana]
+          : 1,
+      duração:
+        listaFeitiços[feitiço].fator == "Duration "
+          ? feitiçaria.arcanas[listaFeitiços[feitiço].arcana]
+          : 1,
+      escala: 1,
+      alcance: 0,
+      reaches: 0,
+      reachMin: 0,
+      reachMax:
+        feitiçaria.arcanas[listaFeitiços[feitiço].arcana] -
+        listaFeitiços[feitiço].nível,
+      potênciaAv: false,
+      duraçãoAv: false,
+      escalaAv: false,
+      yantras: 0,
+      dadosExtra: 0,
+      totalDados:
+        feitiçaria.arcanas[listaFeitiços[feitiço].arcana] +
+        feitiçaria.gnose +
+        (habilidades[feitiçosFavoritos[feitiço].skill] ?? 0),
+    })
   );
   console.log("aqui");
   console.log(
@@ -93,6 +79,9 @@ const Conjuração = ({ habilidades, feitiçaria, listaFeitiços }: Props) => {
           alcance: 0,
           reaches: 0,
           reachMin: 0,
+          reachMax:
+            feitiçaria.arcanas[listaFeitiços[nomeFeitiço].arcana] -
+            listaFeitiços[nomeFeitiço].nível,
           potênciaAv: false,
           duraçãoAv: false,
           escalaAv: false,
@@ -106,13 +95,6 @@ const Conjuração = ({ habilidades, feitiçaria, listaFeitiços }: Props) => {
       )
     );
   }
-  // let totalDados =
-  //   feitiçaria.gnose +
-  //   detalhesFeitiçoAtual.nívelArcana +
-  //   detalhesFeitiçoAtual.dadosAdicionais -
-  //   (escala - 1) * 2 -
-  //   (potência - ini_pot) * 2 -
-  //   (duração - ini_dur) * 2;
 
   console.log("mudou");
   console.log(detalhesFeitiçoAtual);
@@ -178,12 +160,20 @@ const Conjuração = ({ habilidades, feitiçaria, listaFeitiços }: Props) => {
 
         <div className="reaches">
           <Contador
-            nome="Reaches"
+            nome="Alterações"
             função={mudaDetalhesFeitiço}
             objeto={detalhesFeitiçoAtual}
             valor={{ reaches: 1 }}
             bottom={Number(detalhesFeitiçoAtual.reachMin)}
           />
+        </div>
+        <div className="reachesDisponíveis">
+          <i>
+            Alterações Disp.:
+            <span>
+              {detalhesFeitiçoAtual.reachMax - detalhesFeitiçoAtual.reaches}
+            </span>
+          </i>
         </div>
         <div className="potência">
           <Contador
@@ -253,6 +243,19 @@ const Conjuração = ({ habilidades, feitiçaria, listaFeitiços }: Props) => {
             valor={{ dadosExtra: 1, totalDados: 1 }}
             bottom={0}
           />
+        </div>
+        <div className="paradoxo">
+          <i>
+            Paradoxo:
+            <span>
+              {Number(
+                detalhesFeitiçoAtual.reaches > detalhesFeitiçoAtual.reachMax &&
+                  (detalhesFeitiçoAtual.reaches -
+                    detalhesFeitiçoAtual.reachMax) *
+                    Math.round(feitiçaria.gnose / 2)
+              )}
+            </span>
+          </i>
         </div>
         <div className="dadosTotal">
           <i>
